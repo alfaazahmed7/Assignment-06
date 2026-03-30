@@ -7,6 +7,7 @@ const Banner = () => {
     return (
         <div className='w-10/12 mx-auto my-14'>
             <div className='grid lg:grid-cols-2 items-center gap-10'>
+                
                 <div className='flex-1'>
                     <div className='flex items-center gap-2 bg-[#E1E7FF] max-w-[280px] p-1 rounded-full mb-4'>
                         <FiTarget className='text-[#4F39F6] font-semibold' />
