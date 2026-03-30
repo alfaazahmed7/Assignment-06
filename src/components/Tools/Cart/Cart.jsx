@@ -1,6 +1,16 @@
 import React from 'react';
 
 const Cart = ({ carts, setCarts }) => {
+    const checkout = () => {
+        setCarts([]);
+    }
+
+    const filteredCart = (cart) => {
+        const filter = carts.filter((c) => c.id !== cart.id);
+        setCarts(filter);
+    }
+
+    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
 
     return (
         <div className='max-w-[1120px] mx-auto w-10/12 mx-auto mb-10 border p-4 border-[#F2F2F2] rounded-2xl'>
@@ -18,10 +28,23 @@ const Cart = ({ carts, setCarts }) => {
                     </div>
 
                     <div>
-                        <a className='text-[#FF3980] font-bold cursor-pointer'>Remove</a>
+                        <a
+                            onClick={() => filteredCart(cart)}
+                            className='text-[#FF3980] font-bold cursor-pointer'>Remove</a>
                     </div>
                 </div>
             )}
+
+            <div className='flex justify-between px-2 mb-4'>
+                <span className='text-[#627382]'>Total</span>
+                <span className='text-[#101727] text-2xl font-bold'>$ {totalPrice}</span>
+            </div>
+
+            <div className='bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 rounded-full over:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200'>
+                <button
+                    onClick={checkout}
+                    className='w-full font-bold text-white  cursor-pointer'>Proceed to Checkout</button>
+            </div>
         </div>
     );
 };
