@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
-const ProductCart = ({ product }) => {
-    console.log(product);
+const ProductCart = ({ product, carts, setCarts }) => {
+    console.log(carts);
+
 
     const variants = {
         "Best Seller": "bg-[#FEF3C6] text-[#BB4D00] font-semibold",
         Popular: "bg-[#E1E7FF] text-[#4F39F6] font-semibold",
         New: "bg-[#E1E7FF] text-[#0A883E] font-semibold"
+    }
+
+    const [click, setClick] = useState(false);
+    const handleButton = () => {
+        setClick(true)
+        setCarts([...carts, product]);
     }
 
     return (
@@ -30,14 +37,16 @@ const ProductCart = ({ product }) => {
             </div>
             <div>
                 {product.features.map((feature) =>
-                    <div className='list-none flex items-center gap-2 mb-2'>
+                    <div key={feature.id} className='list-none flex items-center gap-2 mb-2'>
                         <span className='text-green-500'><FaCheck /></span>
                         <li className='text-[#627382]'>{feature}</li>
                     </div>
                 )}
             </div>
             <div>
-                <button className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer hover:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200 w-full'>Buy Now</button>
+                <button
+                    onClick={handleButton}
+                    className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer hover:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200 w-full'>{click ? "Subscribed" : "Buy Now"}</button>
             </div>
         </div>
     );

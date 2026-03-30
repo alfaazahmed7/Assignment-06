@@ -16,7 +16,8 @@ const productsPromise = getProducts();
 
 
 function App() {
-  const [selected, isSelected] = useState("Products")
+  const [selected, isSelected] = useState("Products");
+  const [carts, setCarts] = useState([]);
 
   return (
     <>
@@ -41,8 +42,15 @@ function App() {
         />
       </div>
 
-      {selected === "Products" && <Products productsPromise={productsPromise} />}
-      {selected === "Cart" && <Cart />}
+      {selected === "Products"
+        && <Products productsPromise={productsPromise}
+          carts={carts}
+          setCarts={setCarts}
+        />}
+      {selected === "Cart" && <Cart
+        carts={carts}
+        setCarts={setCarts}
+      />}
     </>
   )
 }
