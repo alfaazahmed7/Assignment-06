@@ -4,7 +4,7 @@ import { CiShoppingCart } from 'react-icons/ci';
 const Navbar = () => {
     return (
         <div>
-            <div className="navbar w-10/12 mx-auto">
+            <div className="navbar sm:w-11/12 md:h-10/12 lg:h-10/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,7 +20,7 @@ const Navbar = () => {
                             <li className=' hover:text-[#ff5e5b]'>FAQ</li>
                         </ul>
                     </div>
-                    <a className="text-2xl cursor-pointer bg-linear-to-l from-[#9514FA] to-[#4F39F6] bg-clip-text text-transparent font-bold">DigiTools</a>
+                    <a className="sm:text-3xl cursor-pointer bg-linear-to-l from-[#9514FA] to-[#4F39F6] bg-clip-text text-transparent font-bold">DigiTools</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold gap-3 text-base cursor-pointer">
@@ -35,8 +35,8 @@ const Navbar = () => {
                     <div className='text-2xl cursor-pointer'>
                         <CiShoppingCart />
                     </div>
-                    <span className='font-semibold cursor-pointer'>Login</span>
-                    <a className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer'>Get Started</a>
+                    <span className='font-semibold cursor-pointer hidden md:flex'>Login</span>
+                    <a className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer hover:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200'>Get Started</a>
                 </div>
             </div>
         </div>
