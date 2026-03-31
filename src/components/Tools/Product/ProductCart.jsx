@@ -12,8 +12,14 @@ const ProductCart = ({ product, carts, setCarts }) => {
     }
 
     const [click, setClick] = useState(false);
-    const handleButton = () => {
+    const handleSubscription = () => {
         setClick(true)
+
+        const isFound = carts.find((i) => i.id === product.id);
+        if (isFound) {
+            return;
+        }
+
         setCarts([...carts, product]);
     }
 
@@ -45,7 +51,7 @@ const ProductCart = ({ product, carts, setCarts }) => {
             </div>
             <div>
                 <button
-                    onClick={handleButton}
+                    onClick={handleSubscription}
                     className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer hover:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200 w-full'>{click ? "Subscribed" : "Buy Now"}</button>
             </div>
         </div>

@@ -7,7 +7,7 @@ const Banner = () => {
     return (
         <div className='w-10/12 mx-auto my-14'>
             <div className='grid lg:grid-cols-2 items-center gap-10'>
-                
+
                 <div className='flex-1'>
                     <div className='flex items-center gap-2 bg-[#E1E7FF] max-w-[280px] p-1 rounded-full mb-4'>
                         <FiTarget className='text-[#4F39F6] font-semibold' />
@@ -18,7 +18,7 @@ const Banner = () => {
                     </p>
                     <div className='flex gap-3'>
                         <button className='font-semibold bg-linear-to-l from-[#9514FA] to-[#4F39F6] py-2 px-3 rounded-full text-white cursor-pointer hover:bg-linear-to-l hover:from-[#ff0054] hover:to-[#ff5400] hover:text-gray-200'>Explore Product</button>
-                        <button className='flex items-center gap-1 border border-[#4F39F6] rounded-full px-3 hover:bg-linear-to-l hover:from-[#bbdfc5] hover:to-[#ff579f]  hover:text-white hover:border-none cursor-pointer'><CiPlay1 /> Watch Demo</button>
+                        <button className='flex items-center gap-1 border border-[#4F39F6] rounded-full px-3 hover:bg-linear-to-l hover:from-[#bbdfc5] hover:to-[#ff579f]  hover:text-white hover:border-none cursor-pointer font-semibold'><CiPlay1 /> Watch Demo</button>
                     </div>
                 </div>
 
